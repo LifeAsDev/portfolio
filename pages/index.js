@@ -1,5 +1,7 @@
 import Head from "next/head";
 import styles from "../styles/Home.module.css";
+import Link from "next/link";
+import Image from "next/image";
 
 export default function Home() {
   return (
@@ -8,8 +10,17 @@ export default function Home() {
         <title>Create Next App</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <nav>
-        <Link href="/">Home</Link>
+      <nav className={styles.nav}>
+        <Image
+          className={styles.hero}
+          src="/images/hero.jpg"
+          width={500}
+          height={500}
+          alt="Picture of the author"
+        />
+        <Link className={styles.white} href="/">
+          Angelo Sarmiento
+        </Link>
         <ul>
           <li>HOME</li>
           <li>RESUMEN</li>
