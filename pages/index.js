@@ -13,7 +13,14 @@ export default function Home() {
       <nav className={styles.nav}>
         <div className={styles.navBox}>
           <Link className={styles.white} href="/">
-            Angelo Sarmiento
+            <Image
+              className={styles.logo}
+              src="/images/logo.png"
+              width={48}
+              height={48}
+              alt="logo"
+            />
+            <p> Angelo Sarmiento</p>
           </Link>
           <ul className={styles.ul}>
             <li>HOME</li>
@@ -158,30 +165,77 @@ export default function Home() {
             <div className={styles.projectsGrid}>
               <div className={styles.projectBox}>
                 <Image
-                  src="/images/page1.png"
+                  src="/images/page3.png"
                   width={453}
                   height={349}
-                  alt="Picture of the author"
+                  alt="éZoné Restaurant"
                 ></Image>
                 <div className={styles.projectText}>
-                  <p className={styles.projectTittle}>REST Countries API</p>
-                  <p className={styles.projectInfo}>
-                    Explore countries worldwide with React, HTML, CSS, and
-                    JavaScript. Also, it offers filtering options and
-                    incorporates framer-motion animations.
-                  </p>
+                  <div>
+                    <p className={styles.projectTittle}>éZoné Restaurant</p>
+                    <p className={styles.projectInfo}>
+                      Dynamic user experience for a restaurant website allowing
+                      users to explore the menu, log in for a personalized
+                      journey, and seamlessly add items to shopping cart.
+                    </p>
+                  </div>
                   <div className={styles.stackUsedBox}>
-                    <p>React</p> <p>HTML</p>
-                    <p>CSS</p>
-                    <p>JavaScript</p>
+                    <p>Nextjs</p>
+                    <p>Tailwind</p>
+                    <p>JavaScript</p> <p>NextAuth</p>
+                    <p>Framer-motion</p>
+                    <p>MongoDB</p>
                   </div>
                 </div>
               </div>
-              <div className={styles.projectBox}></div>
-              <div className={styles.projectBox}></div>
-              <div className={styles.projectBox}></div>
-              <div className={styles.projectBox}></div>
-              <div className={styles.projectBox}></div>
+              <div className={styles.projectBox}>
+                <Image
+                  src="/images/page1.png"
+                  width={453}
+                  height={349}
+                  alt="REST Countries API"
+                ></Image>
+                <div className={styles.projectText}>
+                  <div>
+                    <p className={styles.projectTittle}>REST Countries API</p>
+                    <p className={styles.projectInfo}>
+                      Explore countries worldwide with React, HTML, CSS, and
+                      JavaScript. Also, it offers filtering options and
+                      incorporates framer-motion animations.
+                    </p>
+                  </div>
+                  <div className={styles.stackUsedBox}>
+                    <p>React</p>
+                    <p>Framer-motion</p>
+                    <p>JavaScript</p> <p>CSS</p>
+                    <p>HTML</p>
+                  </div>
+                </div>
+              </div>
+              <div className={styles.projectBox}>
+                <Image
+                  src="/images/page2.png"
+                  width={453}
+                  height={349}
+                  alt="REST Countries API"
+                ></Image>
+                <div className={styles.projectText}>
+                  <div>
+                    <p className={styles.projectTittle}>
+                      Rock, Paper, Scissors, Lizard, Spock
+                    </p>
+                    <p className={styles.projectInfo}>
+                      Crafted a sleek Rock, Paper, Scissors game featuring
+                      Lizard, Spock mode, playable against the computer.
+                    </p>
+                  </div>
+                  <div className={styles.stackUsedBox}>
+                    <p>React</p>
+                    <p>JavaScript</p> <p>CSS</p>
+                    <p>HTML</p>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </section>
