@@ -2,6 +2,8 @@ import Head from "next/head";
 import styles from "../styles/Home.module.css";
 import Link from "next/link";
 import Image from "next/image";
+import LinkIcon from "./components/linkIcon";
+import GitHubIcon from "./components/githubIcon";
 
 export default function Home() {
   return (
@@ -164,12 +166,33 @@ export default function Home() {
             <h2 className={styles.sectionTittle}>Projects</h2>
             <div className={styles.projectsGrid}>
               <div className={styles.projectBox}>
-                <Image
-                  src="/images/page3.png"
-                  width={453}
-                  height={349}
-                  alt="éZoné Restaurant"
-                ></Image>
+                <div className={styles.projectImageContainer}>
+                  <div className={styles.projectIconContainer}>
+                    <div className={styles.projectIcon}>
+                      <Link
+                        target="_blank"
+                        href={"https://ezone-restaurant.vercel.app/"}
+                      >
+                        <LinkIcon />
+                      </Link>
+                    </div>
+                    <div className={styles.projectIcon}>
+                      <Link
+                        target="_blank"
+                        href={"https://github.com/LifeAsDev/ezone-restaurant"}
+                      >
+                        <GitHubIcon />
+                      </Link>
+                    </div>
+                  </div>
+                  <Image
+                    className={styles.img}
+                    src="/images/page3.png"
+                    width={453}
+                    height={349}
+                    alt="éZoné Restaurant"
+                  ></Image>
+                </div>
                 <div className={styles.projectText}>
                   <div>
                     <p className={styles.projectTittle}>éZoné Restaurant</p>
@@ -189,12 +212,36 @@ export default function Home() {
                 </div>
               </div>
               <div className={styles.projectBox}>
-                <Image
-                  src="/images/page1.png"
-                  width={453}
-                  height={349}
-                  alt="REST Countries API"
-                ></Image>
+                <div className={styles.projectImageContainer}>
+                  <div className={styles.projectIconContainer}>
+                    <div className={styles.projectIcon}>
+                      <Link
+                        target="_blank"
+                        href={"https://lifeasdev.github.io/rest-countries-api/"}
+                      >
+                        <LinkIcon />
+                      </Link>
+                    </div>
+                    <div className={styles.projectIcon}>
+                      <Link
+                        target="_blank"
+                        href={
+                          "https://github.com/LifeAsDev/rest-countries-api/tree/master"
+                        }
+                      >
+                        <GitHubIcon />{" "}
+                      </Link>
+                    </div>
+                  </div>
+                  <Image
+                    className={styles.img}
+                    src="/images/page1.png"
+                    width={453}
+                    height={349}
+                    alt="REST Countries API"
+                  ></Image>
+                </div>
+
                 <div className={styles.projectText}>
                   <div>
                     <p className={styles.projectTittle}>REST Countries API</p>
@@ -213,12 +260,38 @@ export default function Home() {
                 </div>
               </div>
               <div className={styles.projectBox}>
-                <Image
-                  src="/images/page2.png"
-                  width={453}
-                  height={349}
-                  alt="REST Countries API"
-                ></Image>
+                <div className={styles.projectImageContainer}>
+                  <div className={styles.projectIconContainer}>
+                    <div className={styles.projectIcon}>
+                      <Link
+                        target="_blank"
+                        href={
+                          "https://lifeasdev.github.io/rock-paper-scissors/"
+                        }
+                      >
+                        <LinkIcon />
+                      </Link>
+                    </div>
+                    <div className={styles.projectIcon}>
+                      <Link
+                        target="_blank"
+                        href={
+                          "https://github.com/LifeAsDev/rock-paper-scissors/tree/master"
+                        }
+                      >
+                        <GitHubIcon />
+                      </Link>
+                    </div>
+                  </div>
+                  <Image
+                    className={styles.img}
+                    src="/images/page2.png"
+                    width={453}
+                    height={349}
+                    alt="REST Countries API"
+                  ></Image>
+                </div>
+
                 <div className={styles.projectText}>
                   <div>
                     <p className={styles.projectTittle}>
@@ -243,3 +316,27 @@ export default function Home() {
     </div>
   );
 }
+const linkIcon = () => {
+  return (
+    <svg
+      width="800px"
+      height="800px"
+      viewBox="0 0 24 24"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M15.197 3.35462C16.8703 1.67483 19.4476 1.53865 20.9536 3.05046C22.4596 4.56228 22.3239 7.14956 20.6506 8.82935L18.2268 11.2626M10.0464 14C8.54044 12.4882 8.67609 9.90087 10.3494 8.22108L12.5 6.06212"
+        stroke="#1C274C"
+        stroke-width="1.5"
+        stroke-linecap="round"
+      />
+      <path
+        d="M13.9536 10C15.4596 11.5118 15.3239 14.0991 13.6506 15.7789L11.2268 18.2121L8.80299 20.6454C7.12969 22.3252 4.55237 22.4613 3.0464 20.9495C1.54043 19.4377 1.67609 16.8504 3.34939 15.1706L5.77323 12.7373"
+        stroke="#1C274C"
+        stroke-width="1.5"
+        stroke-linecap="round"
+      />
+    </svg>
+  );
+};
