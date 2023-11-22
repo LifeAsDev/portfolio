@@ -19,11 +19,34 @@ a {
   box-sizing: border-box;
 }
 section {
-  min-height: 100vh;
+  padding-top: 3rem;
+  min-height: 80vh;
 }
 p {
   margin: 0;
 }
 svg {
   display: block;
+}
+img {
+  height: initial;
+}
+input[type="text"] {
+  outline: none;
+  border: 1px solid rgb(163, 163, 163);
+  border-radius: 4px;
+  height: 2.75rem;
+  padding: 6px 12px;
+  font-size: 0.95rem;
+  background-color: black;
+}
+textarea {
+  border: 1px solid rgb(163, 163, 163);
+  font-size: 0.95rem;
+  flex-grow: 1;
+  background-color: black;
+
+  resize: none;
+  padding: 10px 12px;
+  border-radius: 4px;
 }

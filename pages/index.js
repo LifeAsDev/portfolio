@@ -6,6 +6,7 @@ import LinkIcon from "./components/linkIcon";
 import GitHubIcon from "./components/githubIcon";
 import LinkedinIcon from "./components/linkendinIcon";
 import FemIcon from "./components/femIcon";
+
 export default function Home() {
   return (
     <div className={styles.container}>
@@ -19,8 +20,8 @@ export default function Home() {
             <Image
               className={styles.logo}
               src="/images/logo.png"
-              width={48}
-              height={48}
+              width={40}
+              height={40}
               alt="logo"
             />
             <p> Angelo Sarmiento</p>
@@ -316,79 +317,88 @@ export default function Home() {
         <section className={styles.contact}>
           <div className={styles.margin}>
             <h2 className={styles.sectionTittle}>Contact</h2>
-            <div>
+            <div className={styles.contactBox}>
               <div>
                 <div>
-                  <svg
-                    width="44px"
-                    height="44px"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M12.5 7.04148C12.3374 7.0142 12.1704 7 12 7C10.3431 7 9 8.34315 9 10C9 11.6569 10.3431 13 12 13C13.6569 13 15 11.6569 15 10C15 9.82964 14.9858 9.6626 14.9585 9.5"
-                      stroke="white"
-                      strokeWidth="1.5"
-                      strokeLinecap="round"
-                    />
-                    <path
-                      d="M5 15.2161C4.35254 13.5622 4 11.8013 4 10.1433C4 5.64588 7.58172 2 12 2C16.4183 2 20 5.64588 20 10.1433C20 14.6055 17.4467 19.8124 13.4629 21.6744C12.5343 22.1085 11.4657 22.1085 10.5371 21.6744C9.26474 21.0797 8.13831 20.1439 7.19438 19"
-                      stroke="white"
-                      strokeWidth="1.5"
-                      strokeLinecap="round"
-                    />
-                  </svg>
+                  <div>
+                    <svg
+                      width="44px"
+                      height="44px"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M12.5 7.04148C12.3374 7.0142 12.1704 7 12 7C10.3431 7 9 8.34315 9 10C9 11.6569 10.3431 13 12 13C13.6569 13 15 11.6569 15 10C15 9.82964 14.9858 9.6626 14.9585 9.5"
+                        stroke="white"
+                        strokeWidth="1.5"
+                        strokeLinecap="round"
+                      />
+                      <path
+                        d="M5 15.2161C4.35254 13.5622 4 11.8013 4 10.1433C4 5.64588 7.58172 2 12 2C16.4183 2 20 5.64588 20 10.1433C20 14.6055 17.4467 19.8124 13.4629 21.6744C12.5343 22.1085 11.4657 22.1085 10.5371 21.6744C9.26474 21.0797 8.13831 20.1439 7.19438 19"
+                        stroke="white"
+                        strokeWidth="1.5"
+                        strokeLinecap="round"
+                      />
+                    </svg>
+                  </div>
+                  <div>
+                    <h4>Location:</h4>
+                    <p>Manaus - state of Amazonas Brazil</p>{" "}
+                  </div>
                 </div>
                 <div>
-                  <h4>Location:</h4>
-                  <p>Manaus - state of Amazonas Brazil</p>{" "}
+                  <div>
+                    <svg
+                      fill="white"
+                      width="40px"
+                      height="40px"
+                      viewBox="0 0 1920 1920"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M0 1694.235h1920V226H0v1468.235ZM112.941 376.664V338.94H1807.06v37.723L960 1111.233l-847.059-734.57ZM1807.06 526.198v950.513l-351.134-438.89-88.32 70.475 378.353 472.998H174.042l378.353-472.998-88.32-70.475-351.134 438.89V526.198L960 1260.768l847.059-734.57Z"
+                        fillRule="evenodd"
+                      />
+                    </svg>
+                  </div>
+                  <div>
+                    <h4>Email:</h4>
+                    <p>Angelosarmiento5d@gmail.com</p>
+                  </div>
+                </div>
+                <div>
+                  <div>
+                    <svg
+                      width="48px"
+                      height="48px"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M4.00655 7.93309C3.93421 9.84122 4.41713 13.0817 7.6677 16.3323C8.45191 17.1165 9.23553 17.7396 10 18.2327M5.53781 4.93723C6.93076 3.54428 9.15317 3.73144 10.0376 5.31617L10.6866 6.4791C11.2723 7.52858 11.0372 8.90532 10.1147 9.8278C10.1147 9.8278 10.1147 9.8278 10.1147 9.8278C10.1146 9.82792 8.99588 10.9468 11.0245 12.9755C13.0525 15.0035 14.1714 13.8861 14.1722 13.8853C14.1722 13.8853 14.1722 13.8853 14.1722 13.8853C15.0947 12.9628 16.4714 12.7277 17.5209 13.3134L18.6838 13.9624C20.2686 14.8468 20.4557 17.0692 19.0628 18.4622C18.2258 19.2992 17.2004 19.9505 16.0669 19.9934C15.2529 20.0243 14.1963 19.9541 13 19.6111"
+                        stroke="white"
+                        strokeWidth="1.5"
+                        strokeLinecap="round"
+                      />
+                    </svg>
+                  </div>
+                  <div>
+                    <h4>Call:</h4>
+                    <p>+55 95 8418 4507</p>
+                  </div>
                 </div>
               </div>
-
-              <div>
+              <form>
                 <div>
-                  <svg
-                    fill="white"
-                    width="40px"
-                    height="40px"
-                    viewBox="0 0 1920 1920"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M0 1694.235h1920V226H0v1468.235ZM112.941 376.664V338.94H1807.06v37.723L960 1111.233l-847.059-734.57ZM1807.06 526.198v950.513l-351.134-438.89-88.32 70.475 378.353 472.998H174.042l378.353-472.998-88.32-70.475-351.134 438.89V526.198L960 1260.768l847.059-734.57Z"
-                      fillRule="evenodd"
-                    />
-                  </svg>
+                  <input type="text" placeholder="Your Name" />
+                  <input type="text" placeholder="Your Email" />
                 </div>
-                <div>
-                  <h4>Email:</h4>
-                  <p>Angelocraft551@gmail.com</p>
-                </div>
-              </div>
-
-              <div>
-                <div>
-                  <svg
-                    width="48px"
-                    height="48px"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M4.00655 7.93309C3.93421 9.84122 4.41713 13.0817 7.6677 16.3323C8.45191 17.1165 9.23553 17.7396 10 18.2327M5.53781 4.93723C6.93076 3.54428 9.15317 3.73144 10.0376 5.31617L10.6866 6.4791C11.2723 7.52858 11.0372 8.90532 10.1147 9.8278C10.1147 9.8278 10.1147 9.8278 10.1147 9.8278C10.1146 9.82792 8.99588 10.9468 11.0245 12.9755C13.0525 15.0035 14.1714 13.8861 14.1722 13.8853C14.1722 13.8853 14.1722 13.8853 14.1722 13.8853C15.0947 12.9628 16.4714 12.7277 17.5209 13.3134L18.6838 13.9624C20.2686 14.8468 20.4557 17.0692 19.0628 18.4622C18.2258 19.2992 17.2004 19.9505 16.0669 19.9934C15.2529 20.0243 14.1963 19.9541 13 19.6111"
-                      stroke="white"
-                      strokeWidth="1.5"
-                      strokeLinecap="round"
-                    />
-                  </svg>
-                </div>
-                <div>
-                  <h4>Call:</h4>
-                  <p>+55 95 8418 4507</p>
-                </div>
-              </div>
+                <input type="text" placeholder="Subject" />
+                <textarea label="Message" placeholder="Message" />
+                <button>Send Message</button>
+              </form>
             </div>
           </div>
         </section>
