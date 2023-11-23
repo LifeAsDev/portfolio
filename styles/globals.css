@@ -31,7 +31,8 @@ svg {
 img {
   height: initial;
 }
-input[type="text"] {
+input[type="text"],
+input[type="email"] {
   outline: none;
   border: 1px solid rgb(163, 163, 163);
   border-radius: 4px;

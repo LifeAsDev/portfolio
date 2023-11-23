@@ -1,4 +1,7 @@
 import Head from "next/head";
+import React, { useRef } from "react";
+import emailjs from "@emailjs/browser";
+
 import styles from "../styles/Home.module.css";
 import Link from "next/link";
 import Image from "next/image";
@@ -8,6 +11,27 @@ import LinkedinIcon from "./components/linkendinIcon";
 import FemIcon from "./components/femIcon";
 
 export default function Home() {
+  const form = useRef();
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    emailjs
+      .sendForm(
+        "service_stlyfg1",
+        "template_8urcobm",
+        form.current,
+        "GWeZLW5EZDmIIJr1a"
+      )
+      .then(
+        (result) => {
+          console.log(result.text);
+        },
+        (error) => {
+          console.log(error.text);
+        }
+      );
+  };
   return (
     <div className={styles.container}>
       <Head>
@@ -390,14 +414,24 @@ export default function Home() {
                   </div>
                 </div>
               </div>
-              <form>
+              <form ref={form} onSubmit={sendEmail}>
                 <div>
-                  <input type="text" placeholder="Your Name" />
-                  <input type="text" placeholder="Your Email" />
+                  <input type="text" name="user_name" placeholder="Your Name" />
+                  <input
+                    type="text"
+                    name="user_email"
+                    placeholder="Your Email"
+                  />
                 </div>
-                <input type="text" placeholder="Subject" />
-                <textarea label="Message" placeholder="Message" />
-                <button>Send Message</button>
+                <input type="text" name="subject" placeholder="subject" />
+                <textarea
+                  name="message"
+                  label="Message"
+                  placeholder="Message"
+                />
+                <button type="submit" value="Send">
+                  Send Message
+                </button>
               </form>
             </div>
           </div>
