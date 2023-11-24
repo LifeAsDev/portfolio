@@ -1,5 +1,5 @@
 import Head from "next/head";
-import React, { useRef } from "react";
+import React, { useRef, useState, useEffect } from "react";
 import emailjs from "@emailjs/browser";
 
 import styles from "../styles/Home.module.css";
@@ -11,11 +11,67 @@ import LinkedinIcon from "./components/linkendinIcon";
 import FemIcon from "./components/femIcon";
 
 export default function Home() {
+  const [scrollPosition, setScrollPosition] = useState(0);
+  const [activeSection, setActiveSection] = useState(null);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrollPosition(window.scrollY);
+    };
+
+    // Agrega un escucha de evento de desplazamiento
+    window.addEventListener("scroll", handleScroll);
+
+    // Elimina el escucha de evento cuando el componente se desmonta
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
+  // Función para determinar la sección activa
+  const determineActiveSection = () => {
+    const sections = ["home", "resumen", "projects", "contact"];
+
+    for (const section of sections) {
+      const elemento = document.getElementById(section);
+      const posicion = elemento ? elemento.offsetTop : 0;
+
+      if (
+        scrollPosition >= posicion - 250 &&
+        scrollPosition < posicion - 250 + elemento.offsetHeight
+      ) {
+        setActiveSection(section);
+        return;
+      }
+    }
+
+    setActiveSection(null);
+  };
+
+  // Llama a la función para determinar la sección activa cada vez que hay un cambio en el scroll
+  useEffect(() => {
+    determineActiveSection();
+  }, [scrollPosition]);
+
+  function toggleClassById(id, action) {
+    var element = document.getElementById(id);
+    if (element) {
+      if (action === "remove") {
+        element.classList.remove("none");
+      } else if (action === "add") {
+        element.classList.add("none");
+      } else {
+        // Si el parámetro action está vacío o no es "remove" ni "add", simplemente togglea la clase
+        element.classList.toggle("none");
+      }
+    }
+  }
   const form = useRef();
-
+  const [disableForm, setDisableForm] = useState(false);
   const sendEmail = (e) => {
+    toggleClassById("MS", "remove");
     e.preventDefault();
-
+    setDisableForm(true);
     emailjs
       .sendForm(
         "service_stlyfg1",
@@ -25,9 +81,15 @@ export default function Home() {
       )
       .then(
         (result) => {
+          setDisableForm(false);
+          document.getElementById("myForm").reset();
+
           console.log(result.text);
         },
         (error) => {
+          setDisableForm(false);
+          document.getElementById("myForm").reset();
+
           console.log(error.text);
         }
       );
@@ -51,10 +113,42 @@ export default function Home() {
             <p> Angelo Sarmiento</p>
           </Link>
           <ul className={styles.ul}>
-            <li>HOME</li>
-            <li>RESUMEN</li>
-            <li>PROJECTS</li>
-            <li>CONTACT</li>
+            <li
+              style={
+                activeSection === "home"
+                  ? { borderBottom: "2px solid #55c459", color: "#55c459" }
+                  : null
+              }
+            >
+              <Link href="#home">HOME</Link>
+            </li>
+            <li
+              style={
+                activeSection === "resumen"
+                  ? { borderBottom: "2px solid #55c459", color: "#55c459" }
+                  : null
+              }
+            >
+              <Link href="#resumen">RESUMEN</Link>
+            </li>
+            <li
+              style={
+                activeSection === "projects"
+                  ? { borderBottom: "2px solid #55c459", color: "#55c459" }
+                  : null
+              }
+            >
+              <Link href="#projects">PROJECTS</Link>
+            </li>
+            <li
+              style={
+                activeSection === "contact"
+                  ? { borderBottom: "2px solid #55c459", color: "#55c459" }
+                  : null
+              }
+            >
+              <Link href="#contact">CONTACT</Link>
+            </li>
           </ul>
         </div>
       </nav>
@@ -66,11 +160,11 @@ export default function Home() {
           height={1200}
           alt="Picture of the author"
         />
-        <section className={styles.home}>
+        <section id="home" className={styles.home}>
           <h1>ANGELO SARMIENTO</h1>
           <h2>FRONT-END DEVELOPER</h2>
         </section>
-        <section className={styles.skills}>
+        <section id="resumen" className={styles.skills}>
           <div className={styles.margin}>
             <h2 className={styles.sectionTittle}>Skills</h2>
             <div className={styles.grid}>
@@ -187,7 +281,7 @@ export default function Home() {
             </div>
           </div>
         </section>
-        <section className={styles.projects}>
+        <section id="projects" className={styles.projects}>
           <div className={styles.margin}>
             <h2 className={styles.sectionTittle}>Projects</h2>
             <div className={styles.projectsGrid}>
@@ -338,7 +432,7 @@ export default function Home() {
             </div>
           </div>
         </section>
-        <section className={styles.contact}>
+        <section id="contact" className={styles.contact}>
           <div className={styles.margin}>
             <h2 className={styles.sectionTittle}>Contact</h2>
             <div className={styles.contactBox}>
@@ -414,24 +508,65 @@ export default function Home() {
                   </div>
                 </div>
               </div>
-              <form ref={form} onSubmit={sendEmail}>
+              <form
+                id="myForm"
+                disabled={disableForm}
+                ref={form}
+                onSubmit={sendEmail}
+              >
                 <div>
-                  <input type="text" name="user_name" placeholder="Your Name" />
                   <input
+                    disabled={disableForm}
+                    required
+                    type="text"
+                    name="user_name"
+                    placeholder="Your Name"
+                  />
+                  <input
+                    disabled={disableForm}
+                    required
                     type="text"
                     name="user_email"
                     placeholder="Your Email"
                   />
                 </div>
-                <input type="text" name="subject" placeholder="subject" />
+                <input
+                  disabled={disableForm}
+                  type="text"
+                  name="subject"
+                  required
+                  placeholder="Subject"
+                />
                 <textarea
+                  disabled={disableForm}
+                  required
                   name="message"
                   label="Message"
                   placeholder="Message"
                 />
-                <button type="submit" value="Send">
-                  Send Message
-                </button>
+                <div className={styles.buttonFormBox}>
+                  <p
+                    className="none"
+                    id="MS"
+                    onClick={() => {
+                      if (disableForm === false) toggleClassById("MS");
+                    }}
+                  >
+                    {disableForm ? "Sending Message..." : "Message Sent"}
+                  </p>
+                  <button
+                    className={styles.buttonForm}
+                    disabled={disableForm}
+                    type="submit"
+                    value="Send"
+                  >
+                    {disableForm ? (
+                      <span className="loader"></span>
+                    ) : (
+                      "Send Message"
+                    )}
+                  </button>
+                </div>
               </form>
             </div>
           </div>

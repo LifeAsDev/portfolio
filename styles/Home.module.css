@@ -31,7 +31,14 @@
   cursor: pointer;
   user-select: none;
   margin-top: 0.5rem;
+  transition: 0.1s;
 }
+.ul li:hover {
+  border-bottom: 2px solid #55c459;
+  color: #55c459;
+  transform: scale(1.1);
+}
+
 .white {
   display: flex;
   justify-content: center;
@@ -40,6 +47,11 @@
   margin: auto 0;
   font-size: 1.5rem;
   color: #eeeeee;
+  cursor: pointer;
+  transition: 0.1s;
+}
+.white:hover {
+  transform: scale(1.1);
 }
 .white p {
   margin-top: 0.5rem;
@@ -208,13 +220,10 @@
   justify-content: space-between;
   padding: 1rem;
 }
-.projectBox img {
-  display: block;
-  height: calc(100% - 12.5rem);
-  width: 100%;
-  object-fit: cover;
-}
+
 .projectInfo {
+  display: flex;
+
   color: #c5c5c5;
 }
 
@@ -242,11 +251,15 @@
 
 .projectImageContainer {
   position: relative;
-  height: 200px;
+  height: 180px;
 }
-.projectImageContainer img {
+.projectBox img {
+  display: block;
   height: 100%;
+  width: 100%;
+  object-fit: cover;
 }
+
 .projectImageContainer:hover .projectIconContainer {
   display: flex;
 }
@@ -388,4 +401,25 @@
 }
 .contactBox form > div > input {
   width: 50%;
+}
+.buttonForm {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.buttonFormBox {
+  position: relative;
+}
+.buttonFormBox p {
+  background-color: #4caf50;
+  color: #ffffff;
+  padding: 0.5rem 0;
+  width: 12rem;
+  text-align: center;
+  border-radius: 4px;
+  cursor: pointer;
+  position: absolute;
+}
+.buttonFormBox p:hover {
+  background-color: #55c459;
 }
