@@ -97,22 +97,6 @@
   color: #eeeeee;
 }
 
-.home h1 {
-  font-size: 4rem;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  font-weight: 600;
-  margin: 0;
-  margin-bottom: 0;
-}
-.home h2 {
-  font-size: 1.6rem;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  font-weight: 500;
-  margin: 0;
-  margin-top: -0.5rem;
-}
 .skills {
   background-image: linear-gradient(180deg, #222221, #0a0a0a);
 }
@@ -180,9 +164,6 @@
   width: 320px;
   height: 320px;
   object-fit: cover;
-  background-size: 100%;
-  -webkit-clip-path: polygon(50% 0%, 100% 38%, 82% 100%, 18% 100%, 0% 38%);
-  clip-path: polygon(50% 0%, 100% 38%, 82% 100%, 18% 100%, 0% 38%);
 }
 .projects {
   background-color: #0a0a0a;
@@ -422,4 +403,75 @@
 }
 .buttonFormBox p:hover {
   background-color: #55c459;
+}
+.crossMark {
+  cursor: pointer;
+  display: none;
+}
+
+.hamburguer {
+  display: none;
+}
+@media (max-width: 768px) {
+  .hamburguer {
+    cursor: pointer;
+    height: 48px;
+    width: 48px;
+    display: block;
+  }
+  .nav {
+    box-sizing: border-box;
+    width: 100%;
+
+    z-index: 1;
+  }
+  .ul {
+    right: 0;
+    top: 0;
+    position: fixed;
+    backdrop-filter: blur(3px);
+    background-color: rgba(0, 0, 0, 0.9);
+    flex-direction: column;
+    padding: 5rem 3rem;
+    height: 100vh;
+    justify-content: flex-start;
+  }
+  .crossMark {
+    display: block;
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+  }
+  .grid {
+    display: grid;
+
+    grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+    row-gap: 2rem;
+    margin: 3rem 0;
+  }
+  .skillBox img {
+    width: 30px;
+    height: 30px;
+  }
+  .skillBox p {
+    font-size: 0.85rem;
+  }
+  .aboutBox {
+    flex-direction: column;
+  }
+  .about {
+    width: 100%;
+  }
+  .avatar {
+    margin: 0;
+  }
+  .contactBox {
+    flex-direction: column;
+  }
+  .contactBox form {
+    width: 100%;
+  }
+}
+.noneMediaquery {
+  display: none;
 }

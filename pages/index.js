@@ -53,19 +53,20 @@ export default function Home() {
     determineActiveSection();
   }, [scrollPosition]);
 
-  function toggleClassById(id, action) {
+  function toggleClassById(id, action, newClass) {
     var element = document.getElementById(id);
     if (element) {
       if (action === "remove") {
-        element.classList.remove("none");
+        element.classList.remove(newClass || "none");
       } else if (action === "add") {
-        element.classList.add("none");
+        element.classList.add(newClass || "none");
       } else {
         // Si el parámetro action está vacío o no es "remove" ni "add", simplemente togglea la clase
-        element.classList.toggle("none");
+        element.classList.toggle(newClass || "none");
       }
     }
   }
+
   const form = useRef();
   const [disableForm, setDisableForm] = useState(false);
   const sendEmail = (e) => {
@@ -112,7 +113,27 @@ export default function Home() {
             />
             <p> Angelo Sarmiento</p>
           </Link>
-          <ul className={styles.ul}>
+          <Image
+            onClick={() =>
+              toggleClassById("navlinks", "remove", "noneMediaquery")
+            }
+            className={styles.hamburguer}
+            src="/images/hamburguer.png"
+            alt="nav menu"
+            width={48}
+            height={48}
+          />
+          <ul id="navlinks" className={styles.ul + " noneMediaquery"}>
+            <Image
+              className={styles.crossMark}
+              onClick={() =>
+                toggleClassById("navlinks", "add", "noneMediaquery")
+              }
+              src="/images/crossmark.png"
+              alt="cross mark"
+              width={28}
+              height={28}
+            />
             <li
               style={
                 activeSection === "home"
@@ -273,7 +294,7 @@ export default function Home() {
               </p>
               <Image
                 className={styles.avatar}
-                src="/images/profile.jpg"
+                src="/images/profilePhoto.png"
                 width={720}
                 height={1280}
                 alt="Picture of the author"
