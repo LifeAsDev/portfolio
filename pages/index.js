@@ -98,7 +98,7 @@ export default function Home() {
   return (
     <div className={styles.container}>
       <Head>
-        <title>Create Next App</title>
+        <title>Angelo Portfolio</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <nav className={styles.nav}>
@@ -179,7 +179,7 @@ export default function Home() {
           src="/images/hero.jpg"
           width={1920}
           height={1200}
-          alt="Picture of the author"
+          alt="hero"
         />
         <section id="home" className={styles.home}>
           <h1>ANGELO SARMIENTO</h1>
@@ -194,16 +194,25 @@ export default function Home() {
                   src="/images/logo-javascript.svg"
                   width={75}
                   height={75}
-                  alt="Picture of the author"
+                  alt="javascript"
                 />
                 <p>JavaScript</p>
+              </div>
+              <div className={styles.skillBox}>
+                <Image
+                  src="/images/typescript.svg"
+                  width={75}
+                  height={75}
+                  alt="typescript"
+                />
+                <p>TypeScript</p>
               </div>
               <div className={styles.skillBox}>
                 <Image
                   src="/images/html-1.svg"
                   width={75}
                   height={75}
-                  alt="Picture of the author"
+                  alt="html"
                 />
                 <p>HTML5</p>
               </div>
@@ -212,7 +221,7 @@ export default function Home() {
                   src="/images/css-3.svg"
                   width={75}
                   height={75}
-                  alt="Picture of the author"
+                  alt="css"
                 />
                 <p>CSS</p>
               </div>
@@ -221,7 +230,7 @@ export default function Home() {
                   src="/images/react.svg"
                   width={75}
                   height={75}
-                  alt="Picture of the author"
+                  alt="react"
                 />
                 <p>React</p>
               </div>
@@ -230,7 +239,7 @@ export default function Home() {
                   src="/images/next-js.svg"
                   width={75}
                   height={75}
-                  alt="Picture of the author"
+                  alt="next js"
                 />
                 <p>Next.js</p>
               </div>
@@ -240,7 +249,7 @@ export default function Home() {
                   src="/images/tailwind-css-2.svg"
                   width={75}
                   height={75}
-                  alt="Picture of the author"
+                  alt="tailwind css"
                 />
                 <p>Tailwind CSS</p>
               </div>
@@ -249,7 +258,7 @@ export default function Home() {
                   src="/images/mongodb-icon.svg"
                   width={75}
                   height={75}
-                  alt="Picture of the author"
+                  alt="mongodb"
                 />
                 <p>mongoDB</p>
               </div>
@@ -258,7 +267,7 @@ export default function Home() {
                   src="/images/expressjs-icon.svg"
                   width={75}
                   height={75}
-                  alt="Picture of the author"
+                  alt="expressjs"
                 />
                 <p>express.js</p>
               </div>
@@ -267,7 +276,7 @@ export default function Home() {
                   src="/images/sass-lang-icon.svg"
                   width={75}
                   height={75}
-                  alt="Picture of the author"
+                  alt="sass"
                 />
                 <p>Sass</p>
               </div>
@@ -276,7 +285,7 @@ export default function Home() {
                   src="/images/git-scm-icon.svg"
                   width={75}
                   height={75}
-                  alt="Picture of the author"
+                  alt="git"
                 />
                 <p>Git</p>
               </div>
@@ -297,7 +306,7 @@ export default function Home() {
                 src="/images/profilePhoto.png"
                 width={720}
                 height={1280}
-                alt="Picture of the author"
+                alt="Picture of developer"
               ></Image>
             </div>
           </div>
