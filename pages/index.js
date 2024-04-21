@@ -321,6 +321,58 @@ export default function Home() {
                     <div className={styles.projectIcon}>
                       <Link
                         target="_blank"
+                        href={"https://trading-recommendations.vercel.app/"}
+                      >
+                        <LinkIcon />
+                      </Link>
+                    </div>
+                    <div className={styles.projectIcon}>
+                      <Link
+                        target="_blank"
+                        href={
+                          "https://github.com/LifeAsDev/trading-recommendations"
+                        }
+                      >
+                        <GitHubIcon />
+                      </Link>
+                    </div>
+                  </div>
+                  <Image
+                    className={styles.img}
+                    src="/images/page4.png"
+                    width={453}
+                    height={349}
+                    alt="Trading recommendations app"
+                  ></Image>
+                </div>
+                <div className={styles.projectText}>
+                  <div>
+                    <p className={styles.projectTittle}>
+                      Trading recommendations app
+                    </p>
+                    <p className={styles.projectInfo}>
+                      App to share trading recommendations.
+                      <br />
+                      The recommendations are given by the host user. Clients
+                      <br />
+                      user can read only.
+                    </p>
+                  </div>
+                  <div className={styles.stackUsedBox}>
+                    <p>Nextjs</p>
+                    <p>Tailwind</p>
+                    <p>TypeScript</p> <p>NextAuth</p>
+                    <p>Firebase</p>
+                    <p>MongoDB</p>
+                  </div>
+                </div>
+              </div>
+              <div className={styles.projectBox}>
+                <div className={styles.projectImageContainer}>
+                  <div className={styles.projectIconContainer}>
+                    <div className={styles.projectIcon}>
+                      <Link
+                        target="_blank"
                         href={"https://ezone-restaurant.vercel.app/"}
                       >
                         <LinkIcon />
@@ -379,7 +431,7 @@ export default function Home() {
                           "https://github.com/LifeAsDev/rest-countries-api/tree/master"
                         }
                       >
-                        <GitHubIcon />{" "}
+                        <GitHubIcon />
                       </Link>
                     </div>
                   </div>
