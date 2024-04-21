@@ -353,9 +353,8 @@ export default function Home() {
                     <p className={styles.projectInfo}>
                       App to share trading recommendations.
                       <br />
-                      The recommendations are given by the host user.
-                      <br />
-                      Clients user can read only.
+                      The recommendations are given by the host user. Clients
+                      user can read only.
                     </p>
                   </div>
                   <div className={styles.stackUsedBox}>
