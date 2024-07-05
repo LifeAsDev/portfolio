@@ -184,6 +184,29 @@ export default function Home() {
         <section id="home" className={styles.home}>
           <h1>ANGELO SARMIENTO</h1>
           <h2>FRONT-END DEVELOPER</h2>
+          <ul className={`${styles.linkSocial} mt-6`}>
+            <li>
+              <Link
+                href="https://www.linkedin.com/in/angelo-sarmiento-1bab3b290/"
+                target="_blank"
+              >
+                <LinkedinIcon />
+              </Link>
+            </li>
+            <li>
+              <Link href="https://github.com/LifeAsDev" target="_blank">
+                <GitHubIcon />
+              </Link>
+            </li>
+            <li>
+              <Link
+                href="https://www.frontendmentor.io/profile/LifeAsDev"
+                target="_blank"
+              >
+                <FemIcon />
+              </Link>
+            </li>
+          </ul>
         </section>
         <section id="resumen" className={styles.skills}>
           <div className={styles.margin}>
@@ -509,6 +532,52 @@ export default function Home() {
                     <p>HTML</p>
                   </div>
                 </div>
+              </div>{" "}
+              <div className={styles.projectBox}>
+                <div className={styles.projectImageContainer}>
+                  <div className={styles.projectIconContainer}>
+                    <div className={styles.projectIcon}>
+                      <Link
+                        target="_blank"
+                        href={"https://v47-tier3-team-31.vercel.app/"}
+                      >
+                        <LinkIcon />
+                      </Link>
+                    </div>
+                    <div className={styles.projectIcon}>
+                      <Link
+                        target="_blank"
+                        href={"https://github.com/LifeAsDev/v47-tier3-team-31"}
+                      >
+                        <GitHubIcon />
+                      </Link>
+                    </div>
+                  </div>
+                  <Image
+                    className={styles.img}
+                    src="/images/page5.png"
+                    width={453}
+                    height={349}
+                    alt="BakPak"
+                  ></Image>
+                </div>
+                <div className={styles.projectText}>
+                  <div>
+                    <p className={styles.projectTittle}>BakPak</p>
+                    <p className={styles.projectInfo}>
+                      Whether you're a local looking to showcase your city or a
+                      traveller seeking unique experiences, we've got you
+                      covered.
+                    </p>
+                  </div>
+                  <div className={styles.stackUsedBox}>
+                    <p>Nextjs</p>
+                    <p>Tailwind</p>
+                    <p>TypeScript</p> <p>NextAuth</p>
+                    <p>Firebase</p>
+                    <p>MongoDB</p> <p>MUI</p>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -658,7 +727,7 @@ export default function Home() {
         <p>
           <i>Client satisfaction takes the spotlight in my priorities</i>
         </p>
-        <ul>
+        <ul className={styles.linkSocial}>
           <li>
             <Link
               href="https://www.linkedin.com/in/angelo-sarmiento-1bab3b290/"
