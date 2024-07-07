@@ -321,8 +321,7 @@ export default function Home() {
                 hold critical thinking, punctuality, and attention to detail in
                 high regard. The journey from never writing a line of code to
                 self-learning enough to be an employed web developer has been
-                quite the ride, and I'm still planning on learning more! SHOW ME
-                more challenges!
+                quite the ride.
               </p>
               <Image
                 className={styles.avatar}
