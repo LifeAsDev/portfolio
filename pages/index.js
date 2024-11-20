@@ -336,56 +336,105 @@ export default function Home() {
         <section id="projects" className={styles.projects}>
           <div className={styles.margin}>
             <h2 className={styles.sectionTittle}>Projects</h2>
-            <div className={styles.projectsGrid}><div className={styles.projectBox}>
-              <div className={styles.projectImageContainer}>
-                <div className={styles.projectIconContainer}>
-                  <div className={styles.projectIcon}>
-                    <Link
-                      target="_blank"
-                      href={"https://educacion-app.vercel.app/"}
-                    >
-                      <LinkIcon />
-                    </Link>
+            <div className={styles.projectsGrid}>
+              <div className={styles.projectBox}>
+                <div className={styles.projectImageContainer}>
+                  <div className={styles.projectIconContainer}>
+                    <div className={styles.projectIcon}>
+                      <Link
+                        target="_blank"
+                        href={"https://service-management-indol.vercel.app/"}
+                      >
+                        <LinkIcon />
+                      </Link>
+                    </div>
+                    <div className={styles.projectIcon}>
+                      <Link
+                        target="_blank"
+                        href={
+                          "https://github.com/LifeAsDev/service-management"
+                        }
+                      >
+                        <GitHubIcon />
+                      </Link>
+                    </div>
                   </div>
-                  <div className={styles.projectIcon}>
-                    <Link
-                      target="_blank"
-                      href={
-                        "https://github.com/LifeAsDev/educacion-app"
-                      }
-                    >
-                      <GitHubIcon />
-                    </Link>
+                  <Image
+                    className={styles.img}
+                    src="/images/service-management.png"
+                    width={453}
+                    height={349}
+                    alt="Service Management"
+                  ></Image>
+                </div>
+                <div className={styles.projectText}>
+                  <div>
+                    <p className={styles.projectTittle}>
+                      Service Management
+                    </p>
+                    <p className={styles.projectInfo}>
+                      A service management app with authentication, autocomplete features, order tracking, client management, invoice printing, and earnings statistics.
+                    </p>
+                  </div>
+                  <div className={styles.stackUsedBox}>
+                    <p>Nextjs</p>
+                    <p>Tailwind</p>
+                    <p>TypeScript</p> <p>NextAuth</p>
+                    <p>MongoDB</p>
+                    <p>Chartjs</p>
                   </div>
                 </div>
-                <Image
-                  className={styles.img}
-                  src="/images/educacion-app.png"
-                  width={453}
-                  height={349}
-                  alt="Trading recommendations app"
-                ></Image>
               </div>
-              <div className={styles.projectText}>
-                <div>
-                  <p className={styles.projectTittle}>
-                    AULAD
-                  </p>
-                  <p className={styles.projectInfo}>
-                    App for Schools, Teachers can create online exams that students can complete digitally.
-                    The platform supports uploading images and PDFs.
-                  </p>
+              <div className={styles.projectBox}>
+                <div className={styles.projectImageContainer}>
+                  <div className={styles.projectIconContainer}>
+                    <div className={styles.projectIcon}>
+                      <Link
+                        target="_blank"
+                        href={"https://educacion-app.vercel.app/"}
+                      >
+                        <LinkIcon />
+                      </Link>
+                    </div>
+                    <div className={styles.projectIcon}>
+                      <Link
+                        target="_blank"
+                        href={
+                          "https://github.com/LifeAsDev/educacion-app"
+                        }
+                      >
+                        <GitHubIcon />
+                      </Link>
+                    </div>
+                  </div>
+                  <Image
+                    className={styles.img}
+                    src="/images/educacion-app.png"
+                    width={453}
+                    height={349}
+                    alt="Aulad"
+                  ></Image>
                 </div>
-                <div className={styles.stackUsedBox}>
-                  <p>Nextjs</p>
-                  <p>Tailwind</p>
-                  <p>TypeScript</p> <p>NextAuth</p>
-                  <p>MongoDB</p>
-                  <p>Quill</p>
-                  <p>MathQuill</p>
+                <div className={styles.projectText}>
+                  <div>
+                    <p className={styles.projectTittle}>
+                      AULAD
+                    </p>
+                    <p className={styles.projectInfo}>
+                      App for Schools, Teachers can create online exams that students can complete digitally.
+                      The platform supports uploading images and PDFs.
+                    </p>
+                  </div>
+                  <div className={styles.stackUsedBox}>
+                    <p>Nextjs</p>
+                    <p>Tailwind</p>
+                    <p>TypeScript</p> <p>NextAuth</p>
+                    <p>MongoDB</p>
+                    <p>Quill</p>
+                    <p>MathQuill</p>                    <p>Chartjs</p>
+                  </div>
                 </div>
               </div>
-            </div>
               <div className={styles.projectBox}>
                 <div className={styles.projectImageContainer}>
                   <div className={styles.projectIconContainer}>
@@ -580,7 +629,7 @@ export default function Home() {
                     <p>HTML</p>
                   </div>
                 </div>
-              </div>{" "}
+              </div>
               <div className={styles.projectBox}>
                 <div className={styles.projectImageContainer}>
                   <div className={styles.projectIconContainer}>
@@ -802,6 +851,6 @@ export default function Home() {
           © Copyright <strong>#é</strong> . All Rights Reserved.
         </p>
       </footer>
-    </div>
+    </div >
   );
 }
